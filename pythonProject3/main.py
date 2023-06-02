@@ -30,7 +30,7 @@ root.title("Student Registration System")
 root.geometry("1080x720")
 my_tree = ttk.Treeview (root)
 
-phl = tk.StringVar()
+ph1 = tk.StringVar()
 ph2 = tk.StringVar()
 ph3 = tk.StringVar()
 ph4 = tk.StringVar()
@@ -38,7 +38,7 @@ ph5 = tk.Stringvar()
 
 def setph (word, num):
     if num ==1:
-        phl.set(word)
+        ph1.set(word)
     if num ==2:
         ph2.set(word)
     if num ==3:
@@ -210,5 +210,64 @@ fnameLabel.grid(row=4, column=0, columnspan=1, padx=50, pady=5)
 lnameLabel.grid(row=5, column=0, columnspan=1, padx=50, pady=5)
 addressLabel.grid(row=6, column=0, columnspan=1, padx=50, pady=5)
 phonelabel.grid(row=7, coluan=0, columnspan=1, padx=50, pady=5)
+studidEntry = Entry(root, width=55, bd=5, font=('Arial', 15), textvariable = ph1)
+fnameEntry = Entry(root, width=55, bd=5, font=('Arial', 15), textvariable = ph2)
+inameEntry = Entry(root, width=55, bd=5, font=('Arial', 15), textvariable = ph3)
+addresEntry = Entry(root, width=55, bd=5, font=('Arial', 15), textvariable = ph4)
+phoneEntry = Entry(root, width=55, bd=5, font=('Arial', 15), textvariable = ph5)
+
+studidEntry.grid(row=3, column=1, columnspan=4, padx=5, pady=0)
+fnameEntry.grid(row=4, column=1, columnspan=4, padx=5, pady=0)
+inameEntry.grid(row=5, column=1, columnspan=4, padx=5, pady=0)
+addressEntry.grid(row=6, column=1, columnspan=4, padx=5, pady=0)
+phoneEntry.grid(row=7, column=1, columnspan=4, padx=5, pady=0)
+
+addBtn = Button (
+    root, text="Add", padx=65, pady=25, width=10,
+    bd=5, font=('Arial', 15), bg="#84F894", command=add)
+updateBtn = Button(
+    root, text="Update", padx=65, pady=25, width=10,
+    bd=5, font=('Arial', 15), bg="#84E8F8", command=update)
+deleteBtn = Button (
+    root, text="Delete", padx=65, pady=25, width=10,
+    bd=5, font=('Arial', 15), bg="#FF9999", command=delete)
+searchBtn = Button(
+    root, text="Search", padx=65, pady=25, width=10,
+    bd=5, font=('Arial', 15), bg="#F4FE82", command=search)
+resetBtn = Button(
+    root, text="Reset", padx=65, pady=25, width=10,
+    bd=5, font=('Arial', 15), bg="#F398FF", command=reset)
+selectBtn = Button(
+    root, text="Select", padx=65, pady=25, width=10,
+    bd=5, font=('Arial', 15), bg="#EEEEEE", command=select)
+
+addBtn.grid(row=3, column=5, columnspan=1, rowspan=2)
+updateBtn.grid(row=5, column=5, columnspan=1, rowspan=2)
+deleteBtn.grid(row=7, column=5, columnspan=1, rowspan=2)
+searchBtn.grid(row=9, column=5, columnspan=1, rowspan=2)
+resetBtn.grid(row=11, column=5, columnspan=1, rowspan=2)
+selectBtn.grid(row=13, column=5, columnspan=1, rowspan=2)
+
+style = ttk.Style()
+style.configure("Treeview.Heading", font=('Arial Bold', 15))
+
+my_tree['columns'] = ("Stud ID", "Firstname","Lastname","Address","Phone")
+
+my_tree.column("#0", width=0, stretch=NO)
+my_tree.column("Stud ID", anchor=W, width=170)
+my_tree.column("Firstname", anchor=W, width=150)
+my_tree.column("Lastname", anchor=W, width=150)
+my_tree.column("Address", anchor=W, width=165)
+my_tree.column("Phone", anchor=W, width=150)
+
+my_tree.heading("Stud ID", text="Student ID", anchor=W)
+my_tree.heading("Firstname", text="Firstname", anchor=W)
+my_tree.heading("Lastname", text="Lastname", anchor=W)
+my_tree.heading("Address", text="Address", anchor=W)
+my_tree.heading("Phone", text="Phone", anchor=W)
+
+refreshTable()
+
+root.mainloop()
 
 
