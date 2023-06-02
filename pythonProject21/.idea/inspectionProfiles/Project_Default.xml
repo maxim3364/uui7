@@ -1,0 +1,20 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="main.button_add" />
+          <option value="main.button_equal" />
+          <option value="main.button_subtract" />
+          <option value="main.button_multiply" />
+          <option value="main.button_divide" />
+          <option value="main.Button_clear" />
+          <option value="activities.BaseActivity.delete_from_tree" />
+          <option value="activities.BaseActivity.insert_to_tree" />
+          <option value="main.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
